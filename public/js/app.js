@@ -10,7 +10,7 @@ weatherForm.addEventListener("submit", (e) => {
   locationPara.textContent = "Searching...";
   forecastPara.textContent = "";
 
-  let url = `http://127.0.0.1:3000/weather?address=${location}`;
+  let url = `/weather?address=${location}`;
 
   fetch(url).then((response) => {
     response.json().then((data) => {
