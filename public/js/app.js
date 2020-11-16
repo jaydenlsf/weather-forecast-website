@@ -20,6 +20,7 @@ weatherForm.addEventListener("submit", (e) => {
         locationPara.textContent = data.error;
         forecastPara.textContent = "";
         search.value = "";
+        search.focus();
       } else {
         locationPara.textContent = data.location;
         forecastPara.textContent = data.forecast;
