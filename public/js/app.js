@@ -3,6 +3,8 @@ const search = document.querySelector("input");
 const locationPara = document.querySelector("#locationPara");
 const forecastPara = document.querySelector("#forecastPara");
 
+search.focus();
+
 weatherForm.addEventListener("submit", (e) => {
   // .preventDefault prevents the page from refreshing after submitting a form
   e.preventDefault();
@@ -17,9 +19,11 @@ weatherForm.addEventListener("submit", (e) => {
       if (data.error) {
         locationPara.textContent = data.error;
         forecastPara.textContent = "";
+        search.value = "";
       } else {
         locationPara.textContent = data.location;
         forecastPara.textContent = data.forecast;
+        search.value = "";
       }
     });
   });
