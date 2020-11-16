@@ -16,7 +16,7 @@ weatherForm.addEventListener("submit", (e) => {
     response.json().then((data) => {
       if (data.error) {
         locationPara.textContent = data.error;
-        forecastPara.textContent = "Please provide a valid address.";
+        forecastPara.textContent = "";
       } else {
         locationPara.textContent = data.location;
         forecastPara.textContent = data.forecast;

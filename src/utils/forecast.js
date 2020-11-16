@@ -12,7 +12,8 @@ const forecast = (latitude, longitude, callback) => {
       const currentData = body.current;
       callback(
         undefined,
-        `${currentData.weather_descriptions[0]}. It is currently ${currentData["temperature"]} degrees out. It feels like ${currentData["feelslike"]} degrees out.`
+        `${currentData.weather_descriptions[0]}. It is currently ${currentData["temperature"]} degrees out. It feels like ${currentData["feelslike"]} degrees out. 
+        Last update: ${currentData.observation_time}`
       );
     }
   });
