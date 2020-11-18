@@ -21,15 +21,16 @@ hbs.registerPartials(partialsPath);
 app.use(express.static(publicDirectoryPath));
 
 app.get("", (req, res) => {
-  res.render("index");
+  res.render("index", { title: "Weather" });
 });
 
 app.get("/about", (req, res) => {
-  res.render("about");
+  res.render("about", { title: "About" });
 });
 
 app.get("/help", (req, res) => {
   res.render("help", {
+    title: "Help",
     message: "This is the help page",
   });
 });
@@ -65,6 +66,7 @@ app.get("/weather", (req, res) => {
 
 app.get("/help/*", (req, res) => {
   res.render("404", {
+    title: "Help",
     errorMessage: "Help article not found",
   });
 });
