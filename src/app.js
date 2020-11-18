@@ -21,24 +21,16 @@ hbs.registerPartials(partialsPath);
 app.use(express.static(publicDirectoryPath));
 
 app.get("", (req, res) => {
-  res.render("index", {
-    title: "Weather",
-    name: "Jayden Lee",
-  });
+  res.render("index");
 });
 
 app.get("/about", (req, res) => {
-  res.render("about", {
-    title: "About Me",
-    name: "Jayden Lee",
-  });
+  res.render("about");
 });
 
 app.get("/help", (req, res) => {
   res.render("help", {
-    title: "Help",
     message: "This is the help page",
-    name: "Jayden Lee",
   });
 });
 
@@ -73,8 +65,6 @@ app.get("/weather", (req, res) => {
 
 app.get("/help/*", (req, res) => {
   res.render("404", {
-    title: "404",
-    name: "Jayden Lee",
     errorMessage: "Help article not found",
   });
 });
