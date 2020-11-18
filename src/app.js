@@ -64,18 +64,10 @@ app.get("/weather", (req, res) => {
   );
 });
 
-app.get("/help/*", (req, res) => {
-  res.render("help", {
-    title: "Help",
-    errorMessage: "Help article not found",
-  });
-});
-
 app.get("*", (req, res) => {
-  res.render("404", {
-    title: "404",
-    errorMessage: "Page not found",
-  });
+  res.write("<h1>404</h1>");
+  res.write("Page not found");
+  res.end();
 });
 
 app.listen(port, () => {
