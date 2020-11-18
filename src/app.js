@@ -73,6 +73,7 @@ app.get("/help/*", (req, res) => {
 
 app.get("*", (req, res) => {
   res.render("404", {
+    title: "404",
     errorMessage: "Page not found",
   });
 });
